@@ -20,8 +20,8 @@ export default function Home() {
           need
           <Button
             className='ml-16'
-            color='lightBlue'
-            buttonType='filled'
+            color='white'
+            buttonType='outline'
             size='lg'
             rounded={false}
             block={false}
