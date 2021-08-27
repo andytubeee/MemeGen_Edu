@@ -10,10 +10,6 @@ const generate = () => {
   const [editHidden, setEditHidden] = useState(true);
   return (
     <div className='bg-[#FFE501] w-screen h-screen flex justify-center items-center flex-col gap-20'>
-      <Head>
-        <title>Memelet</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
       <div className='min-w-xl min-h-xl w-10/12 h-10 bg-white p-5 rounded-lg'></div>
       <Button
         className='group'

@@ -6,6 +6,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <title>Memelet</title>
+        <link rel='icon' href='/favicon.ico' />
         // Material Icons Link
         <link
           href='https://fonts.googleapis.com/icon?family=Material+Icons'

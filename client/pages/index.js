@@ -9,10 +9,6 @@ export default function Home() {
   const [onBtnHover, setOnBtnHover] = useState(false);
   return (
     <div className='bg-[#6C60FF] w-screen h-screen flex justify-center items-center flex-col'>
-      <Head>
-        <title>Memelet</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
       <div className='text-8xl leading-snug text-white px-10'>
         the meme has <br />{' '}
         <span className='text-yellow-300 font-bold'>everything</span> that you
