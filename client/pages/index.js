@@ -12,9 +12,10 @@ export default function Home() {
         <title>Memelet</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div className='text-5xl text-white px-10'>
-        the meme has <span className='text-yellow-300'>everything</span> that
-        you need
+      <div className='text-6xl text-white px-10'>
+        the meme has <br />{' '}
+        <span className='text-yellow-300 font-bold'>everything</span> that you
+        need
       </div>
       <br></br>
       <Button
