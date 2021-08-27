@@ -17,7 +17,7 @@ const generate = () => {
         <div className='relative flex justify-center  rounded-lg  items-center bg-white'>
           <input
             placeholder='Type your own answer (optional)'
-            className='px-5 py-3 mb-4text-purple-600  rounded-lg outline-none placeholder-purple-600 flex-grow'
+            className='px-5 py-3 text-purple-600  rounded-lg outline-none placeholder-purple-600 flex-grow'
           />
           <Button
             rounded
