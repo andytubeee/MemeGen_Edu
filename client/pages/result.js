@@ -3,7 +3,6 @@ import Icon from '@material-tailwind/react/Icon';
 import { useRouter } from 'next/router';
 import Input from '@material-tailwind/react/Input';
 import { useState } from 'react';
-v;
 
 const generate = () => {
   const router = useRouter();
