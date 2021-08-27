@@ -2,10 +2,11 @@ import Head from 'next/head';
 import Button from '@material-tailwind/react/Button';
 import Icon from '@material-tailwind/react/Icon';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 export default function Home() {
   const router = useRouter();
-
+  const [onBtnHover, setOnBtnHover] = useState(false);
   return (
     <div className='bg-[#6C60FF] w-screen h-screen flex justify-center items-center flex-col'>
       <Head>
@@ -20,8 +21,10 @@ export default function Home() {
           need
           <Button
             className='ml-16'
-            color='white'
-            buttonType='outline'
+            onMouseOver={() => setOnBtnHover(true)}
+            onMouseOut={() => setOnBtnHover(false)}
+            color='yellow'
+            buttonType={onBtnHover ? 'fill' : 'outline'}
             size='lg'
             rounded={false}
             block={false}

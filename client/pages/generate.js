@@ -35,7 +35,7 @@ const generate = () => {
       <Button
         color='deepPurple'
         buttonType='filled'
-        size='regular'
+        size='lg'
         rounded={false}
         block={false}
         iconOnly={false}
