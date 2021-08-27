@@ -40,7 +40,7 @@ const generate = () => {
         block={false}
         iconOnly={false}
         ripple='light'
-        onClick={() => router.push('/')}
+        onClick={() => router.push('/result')}
       >
         Generate
         <Icon name='double_arrow' size='sm' />
