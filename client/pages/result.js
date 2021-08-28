@@ -22,6 +22,14 @@ const generate = () => {
   useEffect(() => {
     setUnansweredMemeUrl(window.sessionStorage.getItem('unanswered_meme'));
     setAnsweredMemeUrl(window.sessionStorage.getItem('answered_meme'));
+
+    toast.info('Click on the image to see the answer', {
+      position: 'top-left',
+      autoClose: 4000,
+      closeOnClick: true,
+      draggable: true,
+      icon: '👉',
+    });
   }, []);
   const downloadMeme = async () => {
     try {
