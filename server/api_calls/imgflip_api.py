@@ -29,7 +29,7 @@ class imgflip_api():
         random_meme_object = meme_list[randint(0, len(meme_list))]  # picking a random meme object
         return random_meme_object
     @staticmethod
-    def generate_meme_template(question, answer, meme_id = None):
+    def generate_meme_url(question, answer, meme_id = None):
 
         username, password = "", ""
 
@@ -60,4 +60,4 @@ class imgflip_api():
         return meme_response["data"]["url"]
 
 if __name__ == '__main__':
-    print(imgflip_api.generate_meme_template("How big is the universe", "very big"))
+    print(imgflip_api.generate_meme_url("How big is the universe", "very big"))
