@@ -6,8 +6,8 @@ This is a project that was created at WaffleHacks
 ## How does it work?
 1. You ask a question
 2. It gives you an answer
-3. Modify the answer accordingly
-4. Generate a meme
+3. If you want, you can modify the answer if you want
+4. Your unique meme will be generated
 5. Study for you exam
 
 ## Technical Stacks:
