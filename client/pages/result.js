@@ -51,7 +51,10 @@ const generate = () => {
             <Image src={memeUrl} width={600} height={500} />
           </div>
           <div className='p-2 flex items-center justify-center'>
-            <p className='mt-5 block bg-white text-gray-500 rounded-lg px-5 py-3 mb-5'>
+            <p
+              className='cursor-pointer mt-5 block bg-white hover:bg-gray-100 duration-300 text-gray-500 rounded-lg px-5 py-3 mb-5'
+              onClick={copyUrl}
+            >
               <strong>URL: </strong> {memeUrl}
             </p>
             <Button className='ml-5' color='orange' onClick={copyUrl}>
