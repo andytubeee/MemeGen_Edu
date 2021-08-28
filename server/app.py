@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import os
 from api_calls import wolfram_api, imgflip_api
 
@@ -8,7 +8,7 @@ from api_calls import wolfram_api, imgflip_api
 # spam protection
 
 
-load_dotenv()
+# load_dotenv()
 
 app = Flask(__name__)
 CORS(app, resources=r'/*', supports_credentials=True)
@@ -23,6 +23,7 @@ def generate_meme():
         answer = request_data["answer"]
     else:
         # Get answer from Wolfram API
+
         response = wolfram_api.wolfram_api.ask_short_answer(
             os.getenv("APPID"), question)
         if response.status_code == 200:
