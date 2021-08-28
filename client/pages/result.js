@@ -25,7 +25,9 @@ const generate = () => {
           router.push('/')
         );
     } catch {
-      Swal.fire('Error', 'Resource not available', 'error');
+      Swal.fire('Error', 'Resource not available', 'error').then(() =>
+        router.push('/')
+      );
     }
   };
   return (
