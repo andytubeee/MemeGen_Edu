@@ -6,17 +6,20 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { saveAs } from 'file-saver';
 import Swal from 'sweetalert2';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const generate = () => {
   const router = useRouter();
   const [memeUrl, setMemeUrl] = useState();
+
   useEffect(() => {
     setMemeUrl(window.sessionStorage.getItem('meme'));
   }, []);
   const downloadMeme = async () => {
     try {
       if (memeUrl) {
-        await saveAs(memeUrl, 'image.jpg');
+        await saveAs(memeUrl, 'Your meme.jpg');
         Swal.fire('Success', 'Downloading meme...', 'success').then(() =>
           router.push('/')
         );
@@ -30,29 +33,50 @@ const generate = () => {
       );
     }
   };
+  const copyUrl = () => {
+    if (!memeUrl) return;
+    navigator.clipboard.writeText(memeUrl);
+    toast.success('Copied', {
+      autoClose: 2000,
+      draggable: true,
+      closeOnClick: true,
+      icon: '📋',
+    });
+  };
   return (
-    <div className='bg-[#FFE501] overflow-hidden min-w-screen min-h-screen flex justify-center items-center flex-col gap-16'>
+    <div className='bg-[#FFE501] overflow-hidden min-w-screen min-h-screen flex justify-center items-center flex-col'>
       {memeUrl ? (
-        <div className='bg-white p-5 rounded-lg'>
-          <Image src={memeUrl} width={600} height={500} />
-        </div>
+        <>
+          <div className='bg-white p-5 rounded-lg'>
+            <Image src={memeUrl} width={600} height={500} />
+          </div>
+          <div className='p-2 flex items-center justify-center'>
+            <p className='mt-5 block bg-white text-gray-500 rounded-lg px-5 py-3 mb-5'>
+              <strong>URL: </strong> {memeUrl}
+            </p>
+            <Button className='ml-5' color='orange' onClick={copyUrl}>
+              <Icon name='content_paste' size='3xl' /> Copy
+            </Button>
+            <ToastContainer />
+          </div>
+          <Button
+            className='group'
+            color='deepPurple'
+            buttonType='filled'
+            size='lg'
+            rounded={false}
+            block={false}
+            iconOnly={false}
+            ripple='light'
+            onClick={downloadMeme}
+          >
+            Download
+            <Icon name='file_download' size='sm' />
+          </Button>
+        </>
       ) : (
         <p className='text-5xl text-purple-600'>Sorry, you have no memes</p>
       )}
-      <Button
-        className='group'
-        color='deepPurple'
-        buttonType='filled'
-        size='lg'
-        rounded={false}
-        block={false}
-        iconOnly={false}
-        ripple='light'
-        onClick={downloadMeme}
-      >
-        Download
-        <Icon name='file_download' size='sm' />
-      </Button>
     </div>
   );
 };
