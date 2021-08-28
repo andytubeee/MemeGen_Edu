@@ -28,7 +28,7 @@ class imgflip_api():
             meme_list, attribute_to_filter_by, amount)  # only gets memes with 2 boxes
 
         # picking a random meme object
-        random_meme_object = meme_list[randint(0, len(meme_list))]
+        random_meme_object = meme_list[randint(0, len(meme_list) - 1)]
         return random_meme_object
 
     @staticmethod
