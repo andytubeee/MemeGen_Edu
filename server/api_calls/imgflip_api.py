@@ -56,11 +56,15 @@ class imgflip_api():
         meme_response = requests.post(
             "https://api.imgflip.com/caption_image", params=parameters).json()
 
-        if not meme_response["success"]:
+        parameters.pop("text1")
+        unanswered_meme_response = requests.post(
+            "https://api.imgflip.com/caption_image", params=parameters).json()
+
+        if not meme_response["success"] and unanswered_meme_response["success"]:
             # again, there either was an issue on their end or on our end
             return ""
 
-        return meme_response["data"]["url"]
+        return (meme_response["data"]["url"], unanswered_meme_response["data"]["url"])
 
 
 if __name__ == '__main__':
