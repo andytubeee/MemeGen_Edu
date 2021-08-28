@@ -36,7 +36,7 @@ const generate = () => {
   const copyUrl = () => {
     if (!memeUrl) return;
     navigator.clipboard.writeText(memeUrl);
-    toast.success('Copied', {
+    toast.success('Copied URL to Clipboard', {
       autoClose: 2000,
       draggable: true,
       closeOnClick: true,
@@ -58,7 +58,7 @@ const generate = () => {
               <strong>URL: </strong> {memeUrl}
             </p>
             <Button className='ml-5' color='orange' onClick={copyUrl}>
-              <Icon name='content_paste' size='3xl' /> Copy
+              <Icon name='content_paste' size='xl' /> Copy
             </Button>
             <ToastContainer />
           </div>
@@ -74,7 +74,7 @@ const generate = () => {
             onClick={downloadMeme}
           >
             Download
-            <Icon name='file_download' size='sm' />
+            <Icon name='file_download' size='xl' />
           </Button>
         </>
       ) : (
