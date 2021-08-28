@@ -19,7 +19,7 @@ const generate = () => {
   };
 
   return (
-    <div className='bg-[#FFE501] w-screen h-screen flex justify-center items-center flex-col gap-20'>
+    <div className='bg-[#FFE501] overflow-hidden min-w-screen min-h-screen flex justify-center items-center flex-col gap-20'>
       <div className='w-10/12 flex flex-col px-5'>
         <input
           placeholder='Enter your question'
