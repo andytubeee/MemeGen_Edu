@@ -1,5 +1,5 @@
-
 import requests
+
 
 class wolfram_api():
     """Class to easily send api requests to wolfram"""
@@ -12,14 +12,15 @@ class wolfram_api():
         """
 
         url = "https://api.wolframalpha.com/v1/result"
-        parameters = {"i": question, "appid": APP_ID}
-        response = requests.get(url, params = parameters)
+        parameters = {"i": question, "appid": APP_ID, "units": "metric"}
+        response = requests.get(url, params=parameters)
 
         return response
+
+
 if __name__ == '__main__':
-    APP_ID = "" #some app id
+    APP_ID = ""  # some app id
 
-
-    #how to make an api call:
+    # how to make an api call:
     response = wolfram_api.ask_short_answer(APP_ID, "How big is the universe?")
     print(response.text)
