@@ -29,23 +29,35 @@ class imgflip_api():
         random_meme_object = meme_list[randint(0, len(meme_list))]  # picking a random meme object
         return random_meme_object
     @staticmethod
-    def generate_meme_template(text, meme_id = None):
+    def generate_meme_template(question, answer, meme_id = None):
 
         username, password = "", ""
 
         if meme_id is None:
-
+            #No meme id was specified, generate a random one for the user (This will almost always be the case)
             random_meme_object = imgflip_api.get_random_meme()
             if random_meme_object == {}:
                 return "" # maybe a better thing to return here might be an error message
+            meme_id = random_meme_object["id"] #setting the meme_id to the randomly generated meme
 
-            meme_id = random_meme_object["id"]
-            return random_meme_object
+
         parameters = {
             "username": username,
             "password": password,
+            "template_id": meme_id,
+            "text0": question, #fills the first box for the meme
+            "text1": answer, #fills the second box for the meme
 
         }
 
+        meme_response = requests.post("https://api.imgflip.com/caption_image", params = parameters).json()
+
+        if not meme_response["success"]:
+            #again, there either was an issue on their end or on our end
+            return ""
+
+
+        return meme_response["data"]["url"]
+
 if __name__ == '__main__':
-    print(imgflip_api.generate_meme_template("asdf"))
+    print(imgflip_api.generate_meme_template("How big is the universe", "very big"))
