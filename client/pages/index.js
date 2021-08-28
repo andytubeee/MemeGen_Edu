@@ -8,7 +8,7 @@ export default function Home() {
   const router = useRouter();
   const [onBtnHover, setOnBtnHover] = useState(false);
   return (
-    <div className='bg-[#6C60FF]  min-w-screen min-h-screen flex justify-center items-center flex-col'>
+    <div className='bg-[#6C60FF] overflow-hidden min-w-screen min-h-screen flex justify-center items-center flex-col'>
       <div className='text-[50px] sm:text-[100px] leading-snug text-white px-10'>
         the meme has <br />{' '}
         <span className='text-yellow-300 font-bold'>everything</span> that you
