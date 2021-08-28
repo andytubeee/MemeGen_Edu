@@ -12,12 +12,16 @@ except:
         from imgflip_api import imgflip_api
         from wolfram_api import wolfram_api
 
-def generate_meme_from_question(question: str) -> str:
+def generate_meme_from_question(question: str, answer:str = "") -> str:
     """
     :param question: The question you would like to ask wolfram alpha
+    :param answer (OPTIONAL): The answer to the question you have asked. You can leave the answer empty if you want wolfram alpha to answer the question
     :return: the url for the meme generated
     """
-    answer = wolfram_api.ask_short_answer("", question)
+
+    if answer == "":
+        answer = wolfram_api.ask_short_answer("", question)
+
     return imgflip_api.generate_meme_url(question = question,
                                          answer = answer)
 
