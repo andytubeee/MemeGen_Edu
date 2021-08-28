@@ -19,9 +19,6 @@ const generate = () => {
 	useEffect(() => {
 		setUnansweredMemeUrl(window.sessionStorage.getItem('unanswered_meme'));
 		setAnsweredMemeUrl(window.sessionStorage.getItem('answered_meme'));
-
-		console.log(unansweredMemeUrl);
-		console.log(answeredMemeUrl);
 	}, []);
 	const downloadMeme = async () => {
 		try {
@@ -46,13 +43,13 @@ const generate = () => {
 				<div className="bg-white p-5 rounded-lg">
 					<ReactCardFlip isFlipped={flipped} flipDirection="vertical">
 						<Image
-							src={answeredMemeUrl}
+							src={unansweredMemeUrl}
 							width={600}
 							height={500}
 							onClick={handleClick}
 						/>
 						<Image
-							src={unansweredMemeUrl}
+							src={answeredMemeUrl}
 							width={600}
 							height={500}
 							onClick={handleClick}

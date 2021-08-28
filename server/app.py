@@ -35,7 +35,7 @@ def generate_meme():
     url = imgflip_api.imgflip_api.generate_meme_url(
         question, answer, os.getenv("IMGFLIP_UNAME"), os.getenv("IMGFLIP_PWORD"))
 
-    return jsonify({"unanswered_url": url[0], "answered_url": url[1]})
+    return jsonify({"answered_url": url[0], "unanswered_url": url[1]})
 
 
 if __name__ == "__main__":
