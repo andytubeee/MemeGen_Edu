@@ -14,7 +14,7 @@ const generate = () => {
 
 	const clickHandler = async () => {
 		if (!getQuestion) return Swal.fire('Error', 'Missing input', 'error');
-		const result = await fetch('https://memelet-api.herokuapp.com/', {
+		const result = await fetch(process.env.NEXT_PUBLIC_BACKEND_URL, {
 			method: 'post',
 			headers: {
 				Accept: 'application/json',
@@ -24,6 +24,7 @@ const generate = () => {
 		})
 			.then((res) => res.json())
 			.then((json) => {
+				console.log(json);
 				window.sessionStorage.setItem(
 					'unanswered_meme',
 					json.unanswered_url
