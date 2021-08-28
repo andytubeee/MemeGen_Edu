@@ -1,5 +1,5 @@
 # Memelet
-A meme flash card generator. This project was made at WaffleHacks. 
+A meme flash card generator.
 
 ## How does it work?
 1. You ask a question
