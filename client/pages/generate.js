@@ -14,6 +14,7 @@ const generate = () => {
 
   const clickHandler = async () => {
     if (!getQuestion) return Swal.fire('Error', 'Missing input', 'error');
+    console.log(getAPIBody);
     const result = await fetch('https://memelet-api.herokuapp.com/', {
       method: 'post',
       headers: {
