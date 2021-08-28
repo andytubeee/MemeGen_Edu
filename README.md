@@ -10,6 +10,9 @@ This is a project that was created at WaffleHacks
 4. Your unique meme will be generated
 5. Study for you exam
 
+![image](https://user-images.githubusercontent.com/61813964/131232995-1c293179-6f9c-41b5-85c4-2654bcefbfba.png)
+
+
 ## Technical Stacks:
 * React
 * Next.js
