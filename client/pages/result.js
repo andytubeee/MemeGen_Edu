@@ -106,7 +106,16 @@ const generate = () => {
           </Button>
         </>
       ) : (
-        <p className='text-5xl text-purple-600'>Sorry, you have no memes</p>
+        <>
+          <p className='text-5xl text-purple-600'>Sorry, you have no memes</p>
+          <Button
+            color='deepPurple'
+            className='mt-10'
+            onClick={() => router.push('/')}
+          >
+            Go Home
+          </Button>
+        </>
       )}
     </div>
   );
