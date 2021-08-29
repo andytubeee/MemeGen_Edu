@@ -11,7 +11,14 @@ This is a project that was created at WaffleHacks
 5. Study for you exam
 
 ![image](https://user-images.githubusercontent.com/61813964/131232995-1c293179-6f9c-41b5-85c4-2654bcefbfba.png)
-
+<br/>
+<br/>
+<br/>
+![image](images/landing.PNG)
+<br/>
+<br/>
+<br/>
+![Alt Text](images/joe_biden.gif)
 
 ## Technical Stacks:
 * React
