@@ -55,7 +55,10 @@ class imgflip_api():
             if random_meme_object == {}:
                 return ""  # maybe a better thing to return here might be an error message
             # setting the meme_id to the randomly generated meme
-            meme_id = random_meme_object["id"]
+            try:
+                meme_id = random_meme_object["id"]
+            except:
+                meme_id = random_meme_object
 
         exception_cases = {'217743513', '222403160', '119139145', '216951317'}
         if meme_id in exception_cases:
