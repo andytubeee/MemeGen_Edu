@@ -24,6 +24,8 @@ class imgflip_api():
             # Either their server is down, or there's a problem with ours. Let's hope for the former
             return {}
         meme_list = json_memes["data"]["memes"]
+        meme_list = imgflip_api.filter_meme_list(
+            meme_list, attribute_to_filter_by, amount)  # only gets memes with 2 boxes
         """
 
         #instead of just picking a random id, it now picks from a list of specially curated meme ids
@@ -36,8 +38,7 @@ class imgflip_api():
                      #exception cases where you need to swap answer and question:
                      '217743513', '222403160', '119139145', '216951317']
 
-        meme_list = imgflip_api.filter_meme_list(
-            meme_list, attribute_to_filter_by, amount)  # only gets memes with 2 boxes
+
 
         # picking a random meme object
         random_meme_object = meme_list[randint(0, len(meme_list) - 1)]
