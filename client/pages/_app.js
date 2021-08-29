@@ -6,6 +6,20 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <meta name='title' content='Memelet' />
+        <meta
+          name='description'
+          content='Memelet is a flash-card generator that generates memes with study materials. Built with React, Nextjs, Python, Flask, TailwindCSS. We help students study better with memes.'
+        />
+        <meta
+          name='keywords'
+          content='memes,study,procrasinate,exams,test,fun,humour,React,Nextjs,TailwindCSS,Python,Flask,Heroku,WaffleHacks,Andrew Yang,Sohil Athare,Emre Cenk, Callum Irving'
+        />
+        <meta name='robots' content='index, follow' />
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+        <meta name='language' content='English' />
+        <meta name='revisit-after' content='1 days' />
+        <meta name='author' content='Andrew, Sohil, Emre, Callum' />
         <title>Memelet</title>
         <link rel='icon' href='/favicon.ico' />
         // Material Icons Link
