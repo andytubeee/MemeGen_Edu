@@ -16,16 +16,27 @@ class imgflip_api():
 
     @staticmethod
     def get_random_meme(attribute_to_filter_by="box_count", amount=2) -> Dict:
+        """
         # meme_id is optional. If nothing is specified, the function will just get a random id
         meme_response = requests.get("https://api.imgflip.com/get_memes")
         json_memes = meme_response.json()
         if not json_memes["success"]:
             # Either their server is down, or there's a problem with ours. Let's hope for the former
             return {}
-
         meme_list = json_memes["data"]["memes"]
         meme_list = imgflip_api.filter_meme_list(
             meme_list, attribute_to_filter_by, amount)  # only gets memes with 2 boxes
+        """
+
+        # instead of just picking a random id, it now picks from a list of specially curated meme ids
+        meme_list = ['181913649', '438680', '188390779', '4087833', '102156234', '252600902', '148909805',
+                     '178591752', '91538330', '101470', '27813981', '89370399', '123999232', '21735', '101288',
+                     '84341851', '14371066', '91545132', '61585', '4173692', '8279814', '163573', '1367068',
+                     '101511', '61580', '16464531', '444501', '142921050', '89655', '71428573', '132769734',
+                     '101716', '61533', '183518946', '21604248', '309672119',
+
+                     # exception cases where you need to swap answer and question:
+                     '217743513', '222403160', '119139145', '216951317']
 
         # picking a random meme object
         random_meme_object = meme_list[randint(0, len(meme_list) - 1)]
@@ -39,10 +50,18 @@ class imgflip_api():
         if meme_id is None:
             # No meme id was specified, generate a random one for the user (This will almost always be the case)
             random_meme_object = imgflip_api.get_random_meme()
-            if random_meme_object == {}:
-                return ""  # maybe a better thing to return here might be an error message
+            # if random_meme_object == {}:
+            # return ""  # maybe a better thing to return here might be an error message
+
             # setting the meme_id to the randomly generated meme
-            meme_id = random_meme_object["id"]
+            # try:
+            #     meme_id = random_meme_object["id"]
+            # except:
+            meme_id = random_meme_object
+
+        exception_cases = {'217743513', '222403160', '119139145', '216951317'}
+        if meme_id in exception_cases:
+            question, answer = answer, question
 
         parameters = {
             "username": username,
@@ -56,7 +75,12 @@ class imgflip_api():
         meme_response = requests.post(
             "https://api.imgflip.com/caption_image", params=parameters).json()
 
-        parameters.pop("text1")
+        # if exception, pop text0 instead of text1
+        if meme_id in exception_cases:
+            parameters.pop("text0")
+        else:
+            parameters.pop("text1")
+
         unanswered_meme_response = requests.post(
             "https://api.imgflip.com/caption_image", params=parameters).json()
 
@@ -68,4 +92,4 @@ class imgflip_api():
 
 
 if __name__ == '__main__':
-    print(imgflip_api.generate_meme_url("How big is the universe", "very big"))
+    pass

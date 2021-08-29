@@ -4,11 +4,25 @@ A meme flash card generator.
 This is a project that was created at WaffleHacks
 
 ## How does it work?
-1. You ask a question
-2. It gives you an answer
-3. ~~You can modify the answer if you want~~ _Don't be picky_
-4. Your unique meme will be generated
-5. Study for you exam
+1) Ask a question
+
+2) If you want, you can provide an optional answer to your question (if you do not provide an answer, Memelet will find the correct answer for you)
+
+3) Your unique meme will be generated
+
+4) Profit Study, or share your flashcard memes with your friends
+
+Feel free to try it out yourself: https://www.memelet.study/
+
+![image](https://user-images.githubusercontent.com/61813964/131232995-1c293179-6f9c-41b5-85c4-2654bcefbfba.png)
+<br/>
+<br/>
+<br/>
+![image](images/landing.PNG)
+<br/>
+<br/>
+<br/>
+![Alt Text](images/joe_biden.gif)
 
 ## Technical Stacks:
 * React
