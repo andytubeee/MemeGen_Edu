@@ -10,6 +10,8 @@ This is a project that was created at WaffleHacks
 4. Your unique meme will be generated
 5. Study for you exam
 
+Feel free to try it out yourself: https://www.memelet.study/
+
 ![image](https://user-images.githubusercontent.com/61813964/131232995-1c293179-6f9c-41b5-85c4-2654bcefbfba.png)
 <br/>
 <br/>
