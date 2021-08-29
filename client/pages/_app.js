@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
         />
         <meta
           name='keywords'
-          content='memes,study,procrasinate,exams,test,fun,humour,React,Nextjs,TailwindCSS,Python,Flask,Heroku,WaffleHacks,Andrew Yang,Sohil Athare,Emre Cenk, Callum Irving'
+          content='memes,study,procrastinate,exams,test,fun,humour,React,Nextjs,TailwindCSS,Python,Flask,Heroku,WaffleHacks,Andrew Yang,Sohil Athare,Emre Cenk, Callum Irving'
         />
         <meta name='robots' content='index, follow' />
         <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
